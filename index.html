@@ -76,6 +76,8 @@ section{padding-block:56px;border-top:1px solid var(--line)}
 .status{display:inline-flex;align-items:center;gap:7px;font-weight:600}
 .status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
 .status.live{color:var(--live)} .status.dev{color:var(--dev)}
+.status.test{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.testmail{font-size:13px;color:var(--muted);user-select:all}
 .proj ul{margin:0;padding-left:18px;display:grid;gap:6px}
 .proj .link{display:inline-block;margin-top:18px;font-weight:600;color:var(--accent)}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
@@ -202,18 +204,18 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
     </article>
 
     <article class="card proj">
-      <div class="head"><div class="tile"><img src="images/lw.png" alt="LiverWise mascot"></div>
-        <div><p class="label">Mobile app family</p><h3>LiverWise</h3></div></div>
-      <p class="who">Food barcode scanner and recipe app, also built as BariWise and PolyWise for other diets</p>
+      <div class="head"><div class="tile"><img src="images/bw.png" alt="BariWise mascot"></div>
+        <div><p class="label">Mobile app</p><h3>BariWise</h3></div></div>
+      <p class="who">Daily nutrition companion for people after bariatric surgery</p>
       <dl class="spec">
-        <dt>Status</dt><dd><span class="status dev">In development</span></dd>
+        <dt>Status</dt><dd><a class="status test" href="mailto:terryd0612@gmail.com?subject=BariWise%20tester">Now accepting testers</a><br><span class="testmail">Email terryd0612@gmail.com to join</span></dd>
         <dt>Built with</dt><dd>Flutter, camera barcode scanning, Supabase, Firebase</dd>
       </dl>
       <ul>
         <li>Scan a product's barcode with the phone camera to see its nutrition details</li>
-        <li>Recipe search, saved cookbooks and grocery lists</li>
-        <li>Community feed, comments and messaging</li>
-        <li>One shared codebase adapted for three audiences</li>
+        <li>Daily logs for protein, water, meals and supplements</li>
+        <li>Meal planner, recipes, saved cookbooks and grocery lists</li>
+        <li>Friends, a community feed and messaging</li>
       </ul>
     </article>
 

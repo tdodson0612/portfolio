@@ -80,6 +80,15 @@ section{padding-block:56px;border-top:1px solid var(--line)}
 .testmail{font-size:13px;color:var(--muted);user-select:all}
 .proj ul{margin:0;padding-left:18px;display:grid;gap:6px}
 .proj .link{display:inline-block;margin-top:18px;font-weight:600;color:var(--accent)}
+.quote{margin:20px 0 0;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:26px 30px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:start}
+.quote img{width:120px;height:120px;border-radius:50%;object-fit:cover;display:block}
+.stars{color:var(--accent);font-size:22px;letter-spacing:3px;line-height:1}
+.quote blockquote{margin:12px 0 0;font-size:17px}
+.quote blockquote p{margin:0 0 10px}
+.quote blockquote a{color:var(--accent);font-weight:600}
+.quote figcaption{margin-top:4px;color:var(--muted)}
+.quote figcaption b{color:var(--ink)}
+.disclose{margin:6px 0 0;font-size:13px;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:20px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px 26px;display:flex;flex-direction:column}
 .card .head{display:flex;gap:16px;align-items:center}
@@ -122,11 +131,11 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
   .grid{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+@media (max-width:560px){.quote{grid-template-columns:1fr;padding:22px 20px}.quote img{width:88px;height:88px}}
 @media (max-width:460px){.steps{grid-template-columns:1fr}.contact{padding:30px 22px}.feature .body,.card{padding:22px 20px}}
 </style>
 </head>
 <body>
-
 
 <div class="wrap">
 <header class="top">
@@ -169,7 +178,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
     <div class="body">
       <p class="label">Client project</p>
       <h3>Corner Barr</h3>
-      <p class="who">Online store for my brother's handmade gift business in Central Point, Oregon</p>
+      <p class="who">Online store for a family-run handmade gift business in Central Point, Oregon</p>
       <dl class="spec">
         <dt>Status</dt><dd><span class="status live">Live at cornerbarr.com</span></dd>
         <dt>Built with</dt><dd>JavaScript, Node.js, Supabase, PayPal, Shippo, Resend</dd>
@@ -185,6 +194,21 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
       <a class="link" href="https://cornerbarr.com" target="_blank" rel="noopener">Visit cornerbarr.com →</a>
     </div>
   </article>
+
+  <figure class="quote">
+    <img src="images/ashley.jpg" alt="Ashley Barr" width="120" height="120">
+    <div>
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote>
+        <p>Terry did an amazing job designing my website, <a href="https://cornerbarr.com" target="_blank" rel="noopener">www.cornerbarr.com</a>!</p>
+        <p>He was responsive, friendly, and easy to work with throughout the entire process. He answered questions promptly, made the experience smooth, and offered competitive pricing without compromising on quality.</p>
+        <p>I truly appreciate his professionalism and attention to detail.</p>
+        <p>I highly recommend Terry to anyone looking for a great website designer!</p>
+      </blockquote>
+      <figcaption><b>Ashley Barr</b>, Owner, Corner Barr</figcaption>
+      <p class="disclose">Ashley is my sister-in-law. I also earn a share of Corner Barr's sales in exchange for ongoing support.</p>
+    </div>
+  </figure>
 
   <div class="grid">
     <article class="card proj">

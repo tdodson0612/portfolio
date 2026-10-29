@@ -3,11 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Terry Dodson Web & App Work</title>
+<title>Terry Dodson Web &amp; App Work</title>
 <meta name="description" content="Terry Dodson builds websites, online stores and mobile apps for small businesses across Southern Oregon.">
 <meta property="og:title" content="Terry Dodson | Websites & apps for small businesses">
 <meta property="og:description" content="Online stores, business websites and custom apps for Southern Oregon small businesses.">
-<meta property="og:image" content="images/booth.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://terry-dodson.onrender.com/">
+<!-- Facebook and other sites need a full URL here, not a relative path. Update both URLs if you move to a custom domain. -->
+<meta property="og:image" content="https://terry-dodson.onrender.com/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Terry Dodson: websites and apps for Southern Oregon small businesses, next to a photo of the Corner Barr booth">
+<meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +41,7 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px}
 .wrap{max-width:1040px;margin:0 auto}
 a{color:inherit}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
 h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;letter-spacing:.01em;text-wrap:balance;margin:0}
 .label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
@@ -100,6 +107,13 @@ section{padding-block:56px;border-top:1px solid var(--line)}
 .also div{border-left:2px solid var(--line);padding-left:14px}
 .also b{display:block}
 .also span{color:var(--muted)}
+.more{margin-top:28px;border-top:1px dashed var(--line);padding-top:18px}
+.more summary{display:inline-flex;align-items:center;gap:10px;cursor:pointer;list-style:none;font-weight:600;color:var(--muted)}
+.more summary::-webkit-details-marker{display:none}
+.more summary::before{content:"+";display:grid;place-items:center;width:22px;height:22px;border:1.5px solid currentColor;border-radius:50%;font-family:var(--mono);font-size:14px;line-height:1}
+.more[open] summary::before{content:"−"}
+.more summary:hover{color:var(--ink)}
+.more .also{margin-top:18px}
 
 /* services & pricing */
 .price{width:100%;border-collapse:collapse;font-size:16px}
@@ -107,6 +121,9 @@ section{padding-block:56px;border-top:1px solid var(--line)}
 .price td:last-child{text-align:right;white-space:nowrap;font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums;padding-left:20px}
 .price small{display:block;color:var(--muted);font-size:14px}
 .note{margin-top:18px;color:var(--muted);max-width:70ch}
+.note b{color:var(--ink);font-weight:600}
+.price th{text-align:left;font-weight:400;padding:30px 0 10px;border-bottom:1px solid var(--line)}
+.ticket dd.safe{font-weight:600;color:var(--live)}
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
 .steps li{counter-increment:s;border-top:3px solid var(--ink);padding-top:14px}
 .steps li::before{content:"Step " counter(s);display:block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
@@ -122,6 +139,11 @@ section{padding-block:56px;border-top:1px solid var(--line)}
 .contact .btn{border-color:var(--bg);color:var(--bg)}
 .contact .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 #copied{font-family:var(--mono);font-size:13px}
+.review{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;border-top:1px dashed var(--bg);padding-top:20px;margin-top:6px;scroll-margin-top:24px}
+.review p{flex:1 1 320px}
+.review b{font-weight:600}
+.hero .cta-note{font-size:15px;margin-top:16px;max-width:62ch;text-wrap:balance}
+.cta-note a{color:var(--accent);font-weight:600;text-underline-offset:3px;white-space:nowrap}
 footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 
 @media (max-width:820px){
@@ -155,6 +177,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
       <a class="btn primary" href="#contact">Email me about a project</a>
       <a class="btn" href="#work">See my work</a>
     </div>
+    <p class="cta-note">Not ready for a project? <a href="#review">Send me your website</a> and I'll reply with 3 things I'd fix, free.</p>
   </div>
   <aside class="ticket" aria-label="At a glance">
     <span class="label">At a glance</span>
@@ -162,7 +185,8 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
       <dt>Based in</dt><dd>Southern Oregon. Working with clients anywhere</dd>
       <dt>Builds</dt><dd>Business websites, online stores, iPhone &amp; Android apps, custom tools</dd>
       <dt>Contact</dt><dd>Email only, usually answered within one business day</dd>
-      <dt>Starting at</dt><dd>$50 for a quick update</dd>
+      <dt>Websites</dt><dd>3–5 page sites from $900, or $0 down at $59/mo for a starter site</dd>
+      <dt>Final payment</dt><dd class="safe">Only after you approve the finished site</dd>
     </dl>
   </aside>
 </div>
@@ -170,7 +194,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
 <section id="work" aria-labelledby="work-h">
   <div class="sec-head">
     <h2 id="work-h">Recent work</h2>
-    <p>One live client store, plus apps I've designed and built from scratch.</p>
+    <p>One project for each kind of work I take on: a live online store, a barcode-scanning app and a crew-scheduling tool.</p>
   </div>
 
   <article class="feature proj">
@@ -198,7 +222,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
   <figure class="quote">
     <img src="images/ashley.jpg" alt="Ashley Barr" width="120" height="120">
     <div>
-      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <div class="stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
       <blockquote>
         <p>Terry did an amazing job designing my website, <a href="https://cornerbarr.com" target="_blank" rel="noopener">www.cornerbarr.com</a>!</p>
         <p>He was responsive, friendly, and easy to work with throughout the entire process. He answered questions promptly, made the experience smooth, and offered competitive pricing without compromising on quality.</p>
@@ -208,23 +232,9 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
       <figcaption><b>Ashley Barr</b>, Owner, Corner Barr</figcaption>    </div>
   </figure>
 
+  <!-- Featured work matches the three promises in the hero, in the same order: store, barcode app, crew scheduling.
+       Everything else lives in "More projects" so it doesn't dilute the strongest proof. -->
   <div class="grid">
-    <article class="card proj">
-      <div class="head"><div class="tile"><img src="images/ks.png" alt="Knight Shift logo"></div>
-        <div><p class="label">Business software</p><h3>Knight Shift</h3></div></div>
-      <p class="who">Employee scheduling and time tracking for small teams</p>
-      <dl class="spec">
-        <dt>Status</dt><dd><span class="status dev">In development</span></dd>
-        <dt>Built with</dt><dd>Flutter, Supabase, Stripe, push notifications</dd>
-      </dl>
-      <ul>
-        <li>Manager dashboard for shifts, recurring schedules and shift swaps</li>
-        <li>Clock in and out, with optional location check at the job site</li>
-        <li>Time-off requests and approvals</li>
-        <li>Bulk import of employees and shifts from a spreadsheet</li>
-      </ul>
-    </article>
-
     <article class="card proj">
       <div class="head"><div class="tile"><img src="images/bw.png" alt="BariWise mascot"></div>
         <div><p class="label">Mobile app</p><h3>BariWise</h3></div></div>
@@ -242,44 +252,33 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
     </article>
 
     <article class="card proj">
-      <div class="head"><div class="tile"><img src="images/bt.png" alt="Babble Tower logo"></div>
-        <div><p class="label">Education app</p><h3>Babble Tower</h3></div></div>
-      <p class="who">Learn to read Koine Greek one verse of the Gospels at a time</p>
+      <div class="head"><div class="tile"><img src="images/ks.png" alt="Knight Shift logo"></div>
+        <div><p class="label">Business software</p><h3>Knight Shift</h3></div></div>
+      <p class="who">Employee scheduling and time tracking for small teams</p>
       <dl class="spec">
         <dt>Status</dt><dd><span class="status dev">In development</span></dd>
-        <dt>Built with</dt><dd>Flutter, offline storage, text-to-speech</dd>
+        <dt>Built with</dt><dd>Flutter, Supabase, Stripe, push notifications</dd>
       </dl>
       <ul>
-        <li>Every word in a verse becomes that day's vocabulary list</li>
-        <li>Quizzes and spaced review before moving to the next verse</li>
-        <li>Spoken pronunciation, progress tracking and achievements</li>
-        <li>Works fully offline</li>
-      </ul>
-    </article>
-
-    <article class="card proj">
-      <div class="head"><div class="tile" aria-hidden="true"><svg viewBox="0 0 64 64" width="44" height="44"><path d="M8 52 C22 44 26 30 32 22 S46 10 56 8" fill="none" stroke="#1F7A4D" stroke-width="5" stroke-linecap="round"/><circle cx="56" cy="8" r="5" fill="#C9481A"/></svg></div>
-        <div><p class="label">Wellness app</p><h3>ClearPath Recovery</h3></div></div>
-      <p class="who">A 12-week recovery support program on your phone</p>
-      <dl class="spec">
-        <dt>Status</dt><dd><span class="status dev">In development</span></dd>
-        <dt>Built with</dt><dd>Flutter, Supabase sign-in, in-app subscriptions</dd>
-      </dl>
-      <ul>
-        <li>Weekly lessons and a daily check-in</li>
-        <li>Coping tools, including an urge timer and a prevention plan</li>
-        <li>Progress charts and shareable PDF reports</li>
-        <li>Crisis resources one tap away</li>
+        <li>Manager dashboard for shifts, recurring schedules and shift swaps</li>
+        <li>Clock in and out, with optional location check at the job site</li>
+        <li>Time-off requests and approvals</li>
+        <li>Bulk import of employees and shifts from a spreadsheet</li>
       </ul>
     </article>
   </div>
 
-  <div class="also" aria-label="Other projects">
-    <div><b>Pump Chump</b><span>Workout planner with exercise diagrams and reminders</span></div>
-    <div><b>Password Fortress</b><span>Personal password vault with an encrypted local store</span></div>
-    <div><b>RLRM</b><span>Fan-made Rocket League training roadmap app</span></div>
-    <div><b>Wise Apps</b><span>Website showcasing my app lineup</span></div>
-  </div>
+  <details class="more">
+    <summary>More projects</summary>
+    <div class="also">
+      <div><b>Babble Tower</b><span>Learn to read Koine Greek one verse of the Gospels at a time · in development</span></div>
+      <div><b>ClearPath Recovery</b><span>A 12-week recovery support program on your phone · in development</span></div>
+      <div><b>Pump Chump</b><span>Workout planner with exercise diagrams and reminders</span></div>
+      <div><b>Password Fortress</b><span>Personal password vault with an encrypted local store</span></div>
+      <div><b>RLRM</b><span>Fan-made Rocket League training roadmap app</span></div>
+      <div><b>Wise Apps</b><span>Website showcasing my app lineup</span></div>
+    </div>
+  </details>
 </section>
 
 <section id="pricing" aria-labelledby="pricing-h">
@@ -289,19 +288,23 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
   </div>
   <div style="overflow-x:auto">
   <table class="price">
+    <!-- Listed from most to least expensive on purpose: the first price a visitor reads sets the yardstick for the rest. -->
     <tbody>
-      <tr><td>Quick update<small>Change text, photos, prices or hours on a site whose code I can access</small></td><td>$50–$100</td></tr>
-      <tr><td>Total website revamp<small>Rebuild an outdated or template site from scratch: a fresh design, your content moved over, broken parts fixed, faster on phones, and help moving your web address. Any size site, priced by the page.</small></td><td>$200–$300/page</td></tr>
-      <tr><td>Small custom tool<small>A calculator, form or tracker built around how you work</small></td><td>From $800</td></tr>
-      <tr><td>Small-business website<small>3–5 pages that work well on phones, with search-engine basics</small></td><td>$900–$1,500</td></tr>
-      <tr><td>Larger website<small>Directories, event calendars, forms, online ordering</small></td><td>$1,500–$2,500</td></tr>
       <tr><td>Mobile app<small>Quoted after we talk through what you need</small></td><td>From $3,000</td></tr>
-      <tr><td>New business starter plan<small>$0 down. A website of one or two pages plus hosting, your domain and 30 minutes a month of updates and minor IT help (like email setup, Google listing changes or quick tech questions). 12-month minimum, then keep it monthly or buy the site outright.</small></td><td>$59/mo</td></tr>
+      <tr><td>Larger website<small>Directories, event calendars, forms, online ordering</small></td><td>$1,500–$2,500</td></tr>
+      <tr><td>Small-business website<small>3–5 pages that work well on phones, with search-engine basics</small></td><td>$900–$1,500</td></tr>
+      <tr><td>Small custom tool<small>A calculator, form or tracker built around how you work</small></td><td>From $800</td></tr>
+      <tr><td>Total website revamp<small>Rebuild an outdated or template site from scratch: a fresh design, your content moved over, broken parts fixed, faster on phones, and help moving your web address. Any size site, priced by the page.</small></td><td>$200–$300/page</td></tr>
+      <tr><td>Quick update<small>Change text, photos, prices or hours on a site whose code I can access</small></td><td>$50–$100</td></tr>
+    </tbody>
+    <tbody>
+      <tr class="group"><th colspan="2" scope="rowgroup"><span class="label">Monthly plans</span></th></tr>
+      <tr><td>New business starter plan<small>$0 down. A website of one or two pages plus hosting, your domain and 30 minutes a month of updates and minor IT help (like email setup, Google listing changes or quick tech questions). 12-month minimum. After 12 months the site is yours, and the price drops to $39/month to keep it hosted with the same monthly updates, or you can move it anywhere you like.</small></td><td>$59/mo<small>then $39/mo</small></td></tr>
       <tr><td>Monthly care plan<small>Updates, backups and support, with a set number of hours each month</small></td><td>$100–$150/mo</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="note">Prices are negotiable. Pay in full or in up to 6 payments at no extra cost, and the final payment isn't due until you've approved the finished site. Longer monthly plans are available too. A deposit of up to $300 reserves your spot and is credited toward your total.</p>
+  <p class="note"><b>You don't make the final payment until you've approved the finished site.</b> Prices are negotiable. Pay in full or in up to 6 payments at no extra cost, and longer monthly plans are available too. Any monthly plan drops to $39/month after the first 12 months (hosting plus the same monthly update time), or you can move your site anywhere you like. A deposit of up to $300 reserves your spot and is credited toward your total.</p>
 </section>
 
 <section id="process" aria-labelledby="process-h">
@@ -310,7 +313,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
     <li><b>Email me</b><span>Tell me about your business and what's not working.</span></li>
     <li><b>Get a proposal</b><span>I send back a written plan with the price and timeline.</span></li>
     <li><b>I build it</b><span>A deposit (up to $300) starts the work. You review progress by email.</span></li>
-    <li><b>Launch</b><span>Pay the balance, go live, and add a care plan if you want one.</span></li>
+    <li><b>Approve &amp; launch</b><span>Once you've approved the finished site, pay the balance and go live. Add a care plan if you want one.</span></li>
   </ol>
 </section>
 
@@ -323,6 +326,10 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
       <button class="btn primary" id="copy" type="button">Copy email</button>
       <a class="btn" href="mailto:terrydodsondev@gmail.com?subject=Website%20project">Open in mail app</a>
       <span id="copied" role="status"></span>
+    </div>
+    <div class="review" id="review">
+      <p><b>Not sure what you need yet?</b> Send me your website, Facebook page or Google listing and I'll reply with 3 specific things I'd fix. Free, no strings attached.</p>
+      <a class="btn" href="mailto:terrydodsondev@gmail.com?subject=Free%20site%20review&amp;body=Hi%20Terry%2C%0D%0A%0D%0AMy%20business%3A%20%0D%0AMy%20website%2C%20Facebook%20page%20or%20Google%20listing%3A%20%0D%0AWhat%20I%20wish%20it%20did%20better%3A%20%0D%0A">Ask for a free review</a>
     </div>
   </div>
 </section>

@@ -55,7 +55,8 @@ nav a:hover{color:var(--ink)}
 
 /* hero */
 .hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;align-items:stretch;padding-block:56px 48px}
-.hero > div:first-child{align-self:end}
+.hero > div:first-child{align-self:start}
+.hero > div:first-child > .label{margin:0 0 14px;line-height:1}
 .hero-side{display:flex;flex-direction:column;gap:16px}
 .portrait{flex:1 1 auto;min-height:280px;margin:0;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:#D9DCDD}
 .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block}

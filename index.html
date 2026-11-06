@@ -225,6 +225,13 @@ html,body{overflow-x:clip}
 .ref-table small{display:block;color:var(--muted);font-size:14px}
 @media (prefers-reduced-motion: reduce){.referral summary::before{transition:none}}
 .trust{color:var(--muted)}
+.hero-special{margin-top:22px;max-width:56ch;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:16px 20px;animation:rise .7s var(--ease-out) .85s both}
+.hero-special .label{color:var(--accent)}
+.hero-special p{margin:6px 0 8px;font-size:16px;color:var(--ink)}
+.hero-special b{color:var(--accent)}
+.hero-special a{font-weight:600;color:var(--accent);text-underline-offset:3px;display:inline-block;transition:transform var(--dur-fast) var(--ease-spring)}
+.hero-special a:hover{transform:translateX(4px)}
+@media (prefers-reduced-motion: reduce){.hero-special{animation:none}.hero-special a{transition:none}}
 .trust .sep{color:var(--accent);margin:0 4px}
 /* why it matters */
 .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
@@ -273,6 +280,11 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
       <a class="btn" href="#contact">Email me about a project</a>
     </div>
     <p class="cta-note trust">Free review: 3 specific fixes, by email, no strings. <span class="sep">·</span> $0 down options <span class="sep">·</span> Final payment only after you approve <span class="sep">·</span> You own your site once it's paid off</p>
+    <aside class="hero-special" data-ends="2026-12-01T00:00:00-08:00" aria-label="Fall 2026 Special">
+      <span class="label">Fall 2026 Special · ends November 30</span>
+      <p><b>$100 off</b> any website package, plus <b>another $100 off</b> when you leave an honest review after it's done.</p>
+      <a href="#plans">See plans →</a>
+    </aside>
   </div>
   <div class="hero-side">
   <figure class="portrait"><img src="images/terry.jpg" alt="Terry Dodson, web and app developer" width="800" height="988" fetchpriority="high" decoding="async"></figure>

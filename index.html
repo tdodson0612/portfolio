@@ -207,6 +207,21 @@ html,body{overflow-x:clip}
   .btn:hover,.nav-cta:hover,.link:hover,.all-prices:hover,.plan:hover,.card:hover{transform:none}
   .hero h1 .w,.hero-copy > *{animation:none!important}
 }
+.referral{margin-top:28px;border-top:1px dashed var(--line);padding-top:18px}
+.referral summary{display:inline-flex;align-items:center;gap:10px;cursor:pointer;list-style:none;font-weight:600;color:var(--accent)}
+.referral summary::-webkit-details-marker{display:none}
+.referral summary::before{content:"+";display:grid;place-items:center;width:22px;height:22px;border:1.5px solid currentColor;border-radius:50%;font-family:var(--mono);font-size:14px;line-height:1;transition:transform var(--dur-med) var(--ease-out)}
+.referral[open] summary::before{content:"−";transform:rotate(180deg)}
+.ref-body{margin-top:18px;max-width:72ch}
+.ref-body h3{font-size:clamp(22px,2.4vw,28px);text-transform:uppercase;margin:26px 0 8px}
+.ref-body p{margin:0 0 10px;color:var(--muted)}
+.ref-body ul{margin:0 0 10px;padding-left:18px;display:grid;gap:6px}
+.ref-table{width:100%;border-collapse:collapse;margin:8px 0 14px}
+.ref-table th,.ref-table td{padding:10px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.ref-table th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.ref-table td:last-child,.ref-table th:last-child{text-align:right;white-space:nowrap;padding-left:16px;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.ref-table small{display:block;color:var(--muted);font-size:14px}
+@media (prefers-reduced-motion: reduce){.referral summary::before{transition:none}}
 footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 
 @media (max-width:820px){
@@ -432,6 +447,51 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
   </table>
   </div>
   <p class="note"><b>You don't make the final payment until you've approved the finished site.</b> Prices are negotiable. Pay in full or in up to 6 payments at no extra cost, and longer monthly plans are available too. Monthly plans priced above $39 drop to $39/month after the first 12 months (hosting plus the same monthly update time), or you can move your site anywhere you like. A deposit of up to $300 reserves your spot and is credited toward your total.</p>
+  <details class="referral" id="referrals">
+    <summary>Referral program: click for more info</summary>
+    <div class="ref-body">
+      <p>Know someone who needs a website or app? You don't have to be a client to earn a reward, and there's no limit on how many people you can refer.</p>
+      <h3>Your reward</h3>
+      <p>For each person you refer who signs up and makes their first payment, choose one:</p>
+      <ul>
+        <li><b>Cash:</b> 15% of their first payment<span data-ends="2026-12-01T00:00:00-08:00"> (20% through November 30, 2026)</span>, paid by Venmo, Cash App or Facebook Pay</li>
+        <li><b>Credit</b> of the same amount toward your own project or plan</li>
+        <li><b>Save it toward a free upgrade</b> of your own site (below)</li>
+      </ul>
+
+      <h3>Move up to a bigger package</h3>
+      <p>Upgrade to any package bigger than the one you have now:</p>
+      <table class="ref-table">
+        <thead><tr><th scope="col">Package</th><th scope="col">Referrals needed</th></tr></thead>
+        <tbody>
+          <tr><td>Small-business website<small>3–5 pages</small></td><td>9</td></tr>
+          <tr><td>Larger website<small>Directories, calendars, forms, online ordering</small></td><td>15</td></tr>
+          <tr><td>Mobile app</td><td>30</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Add to the site you have</h3>
+      <p>Works with any package, including the $5 single page:</p>
+      <table class="ref-table">
+        <thead><tr><th scope="col">Add-on</th><th scope="col">Referrals needed</th></tr></thead>
+        <tbody>
+          <tr><td>One more page<small>Designed to match the rest of your site</small></td><td>2 per page</td></tr>
+          <tr><td>Small custom tool<small>A calculator, form or tracker built around how you work</small></td><td>8</td></tr>
+        </tbody>
+      </table>
+
+      <h3>How referrals count</h3>
+      <ul>
+        <li>One-time projects count once their first payment is made.</li>
+        <li>New Business Starter Plan ($59/month) referrals count once they've made their 3rd monthly payment.</li>
+        <li>The $5 single-page plan earns the cash or credit reward, but doesn't count toward upgrades.</li>
+        <li>Each referral goes toward a reward or an upgrade, not both.</li>
+        <li>The person you refer must be new to me. If two people refer the same person, the first one I hear from gets credit.</li>
+        <li>Upgrades include everything in that package's starting price. Any monthly plan you're on continues as agreed, and upgrades are scheduled in the order clients sign up.</li>
+      </ul>
+      <p>To refer someone, just email me their name at terrydodsondev@gmail.com, or have them mention your name when they reach out.</p>
+    </div>
+  </details>
 </section>
 
 
@@ -480,7 +540,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
 (function () {
   if (!('getBoundingClientRect' in document.documentElement)) return;
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var sel = '#plans .special, #plans .plan, #work .feature, #work .quote, #work .card, #work .more, #process .steps li, #pricing > div, #pricing .note, #faq details, #contact .contact';
+  var sel = '#plans .special, #plans .plan, #work .feature, #work .quote, #work .card, #work .more, #process .steps li, #pricing > div, #pricing .note, #pricing .referral, #faq details, #contact .contact';
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
   function side(el, i) {
     el.classList.remove('from-left', 'from-right');

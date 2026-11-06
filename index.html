@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0D1A1A">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dodson Direct Development | Websites &amp; Apps</title>
 <meta name="description" content="Dodson Direct Development: Terry Dodson builds websites, online stores and mobile apps for small businesses across Southern Oregon.">
@@ -22,8 +24,9 @@
 <style>
 /* Layout: a single column of "work orders" — each project is a spec ticket with Type / Status / Built with rows, set against coastal fog with one buoy-orange accent. */
 :root{
-  --bg:#EEF2F1; --surface:#FFFFFF; --ink:#13302F; --muted:#4F6563; --line:#D3DCDA;
-  --accent:#C9481A; --accent-ink:#FFFFFF; --tag:#E2EAE8; --live:#1F7A4D; --dev:#8A6A12;
+  color-scheme:dark;
+  --bg:#0D1A1A; --surface:#132424; --ink:#E4ECEA; --muted:#9DB0AD; --line:#26403F;
+  --accent:#F07A44; --accent-ink:#1A0D06; --tag:#1B3332; --live:#5FCB93; --dev:#E2BE55;
   --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
   --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -32,9 +35,6 @@
   --ease-spring:cubic-bezier(.34,1.4,.64,1); /* tiny overshoot for hover lifts */
   --dur-fast:.18s; --dur-med:.35s; --dur-slow:.9s;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0D1A1A; --surface:#132424; --ink:#E4ECEA; --muted:#9DB0AD; --line:#26403F;
-  --accent:#F07A44; --accent-ink:#1A0D06; --tag:#1B3332; --live:#5FCB93; --dev:#E2BE55; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0D1A1A; --surface:#132424; --ink:#E4ECEA; --muted:#9DB0AD; --line:#26403F;
   --accent:#F07A44; --accent-ink:#1A0D06; --tag:#1B3332; --live:#5FCB93; --dev:#E2BE55; color-scheme:dark}

@@ -207,7 +207,9 @@ html,body{overflow-x:clip}
   .btn:hover,.nav-cta:hover,.link:hover,.all-prices:hover,.plan:hover,.card:hover{transform:none}
   .hero h1 .w,.hero-copy > *{animation:none!important}
 }
-.referral{margin-top:28px;border-top:1px dashed var(--line);padding-top:18px}
+.ref-wrap{margin-top:28px;border-top:1px dashed var(--line);padding-top:26px}
+.ref-cta{font-family:var(--display);font-size:clamp(30px,4vw,46px);font-weight:700;line-height:1.08;color:var(--ink);text-transform:none;letter-spacing:.01em;margin:0 0 14px;max-width:24ch}
+.referral{margin:0}
 .referral summary{display:inline-flex;align-items:center;gap:10px;cursor:pointer;list-style:none;font-weight:600;color:var(--accent)}
 .referral summary::-webkit-details-marker{display:none}
 .referral summary::before{content:"+";display:grid;place-items:center;width:22px;height:22px;border:1.5px solid currentColor;border-radius:50%;font-family:var(--mono);font-size:14px;line-height:1;transition:transform var(--dur-med) var(--ease-out)}
@@ -447,6 +449,8 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
   </table>
   </div>
   <p class="note"><b>You don't make the final payment until you've approved the finished site.</b> Prices are negotiable. Pay in full or in up to 6 payments at no extra cost, and longer monthly plans are available too. Monthly plans priced above $39 drop to $39/month after the first 12 months (hosting plus the same monthly update time), or you can move your site anywhere you like. A deposit of up to $300 reserves your spot and is credited toward your total.</p>
+  <div class="ref-wrap">
+  <h3 class="ref-cta">Need a website, but don't quite have the funds? Save BIG with our referral program!</h3>
   <details class="referral" id="referrals">
     <summary>Referral program: click for more info</summary>
     <div class="ref-body">
@@ -492,6 +496,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
       <p>To refer someone, just email me their name at terrydodsondev@gmail.com, or have them mention your name when they reach out.</p>
     </div>
   </details>
+  </div>
 </section>
 
 
@@ -540,7 +545,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:14px;display:flex;fl
 (function () {
   if (!('getBoundingClientRect' in document.documentElement)) return;
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var sel = '#plans .special, #plans .plan, #work .feature, #work .quote, #work .card, #work .more, #process .steps li, #pricing > div, #pricing .note, #pricing .referral, #faq details, #contact .contact';
+  var sel = '#plans .special, #plans .plan, #work .feature, #work .quote, #work .card, #work .more, #process .steps li, #pricing > div, #pricing .note, #pricing .ref-wrap, #faq details, #contact .contact';
   var els = Array.prototype.slice.call(document.querySelectorAll(sel));
   function side(el, i) {
     el.classList.remove('from-left', 'from-right');
